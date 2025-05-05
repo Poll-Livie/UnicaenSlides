@@ -1,0 +1,254 @@
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(lower.bg); color(2pt)=(lower.bg); color(4pt)=(lower.bg)}
+
+\setbeamersize{text margin left=2em,text margin right=2em} 
+
+% table of contents (overview)
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3.2em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{date}[default]
+
+%\setbeamertemplate{background}[grid][step=1em]
+
+% General frames
+\setbeamertemplate{frametitle}{
+\vspace*{1em}\bfseries\insertframetitle\par\vskip-6pt
+%\logo { 
+%    \begin{tikzpicture}[overlay,remember picture]
+%    \node[above=.75cm,left=0.2cm] at (current page.24){
+%        \includegraphics[width=1.5cm]{AICStyleData/logos/LIS-logo.png}
+%    };
+%    \end{tikzpicture}
+%    }
+%    %-------------------------
+%    {\usebeamercolor[fg]{titlegraphic}\insertlogo\par}
+
+}
+
+
+
+% Footline
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[ht=3em,sep=0.75em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{footlinecolor}
+    \scriptsize{\insertshortinstitute}
+    \hspace{1cm}
+    \hfill
+    \scriptsize{\insertframenumber/\inserttotalframenumber}
+  \end{beamercolorbox}%
+}
+
+% Template for headings in multicolumn layout
+\setbeamertemplate{column_heading}{
+    \begin{beamercolorbox}{customgray}
+    \end{beamercolorbox}
+}
+
+% Template for the final page of the presentation
+\setbeamertemplate{endpage}{
+	\vspace{8em}
+    \begingroup
+%        \centering
+        % Logo on the end page
+        \titlegraphic{
+        	\begin{tikzpicture}[overlay,remember picture]
+        		\node[anchor=north west, outer xsep=26pt, outer ysep=20pt] at (current page.north west){
+        			\includegraphics[width=10em]{AICStyleData/logos/unicaen-logo.png}
+        		};
+        		\node[anchor=north west, outer xsep=136pt, outer ysep=35pt] at (current page.north west){
+        			\includegraphics[width=12em]{AICStyleData/logos/logo_HTWG.png}
+        		};
+        	\end{tikzpicture}
+        }
+	    \vskip 9.5em\par
+    	% ------------------------
+    	\begin{beamercolorbox}[sep=8pt,left]{author}
+    		\usebeamerfont{author}\insertauthor
+    	\end{beamercolorbox}
+    	%	    \vskip-2em
+    	% ------------------------
+    	%	    \vskip1.5em\par
+    	\begin{beamercolorbox}[sep=8pt,left]{institute}
+    		\usebeamerfont{institute}\insertinstitute
+    		\hspace*{0.45\linewidth}
+    		\usebeamerfont{date}\insertdate
+    	\end{beamercolorbox}
+    	% -----------------------
+    	
+  		\vskip -17em
+        % ------------------------
+        \begin{beamercolorbox}[sep=8pt,left]{title}
+        \setbeamercolor{normal text}{fg=red}
+        \vskip2.5em\par
+        \usebeamerfont{title}\finalpage \par% 
+        \end{beamercolorbox}%
+        % \vskip 2.5em\par
+
+       {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}    
+    
+    	\vfill
+    
+		
+    \endgroup
+	
+}
+
+% Title page
+\setbeamertemplate{title page}{
+    \vspace{10em}
+    \begingroup
+        \centering
+        % ------------------------
+        \vskip 7em\par
+        % ------------------------
+        \begin{beamercolorbox}[sep=8pt,left]{author}
+        \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+        \vskip-2em
+        % ------------------------
+        \vskip1.5em\par
+        \begin{beamercolorbox}[sep=8pt,left]{institute}
+        \usebeamerfont{institute}\insertinstitute
+        \hspace*{0.45\linewidth}
+        \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}
+    
+        % Logo on the title page
+       \titlegraphic{
+        \begin{tikzpicture}[overlay,remember picture]
+        \node[anchor=north west, outer xsep=26pt, outer ysep=15pt] at (current page.north west){
+            \includegraphics[width=6em]{AICStyleData/logos/normandieuniversite_logo_NOIR_ok-1.png}
+        };
+        \node[anchor=north west, outer xsep=96pt, outer ysep=15pt] at (current page.north west){
+            \includegraphics[width=6em]{AICStyleData/logos/unicaen-logo.png}
+        };
+        \node[anchor=north west, outer xsep=166pt, outer ysep=20pt] at (current page.north west){
+            \includegraphics[width=9em]{AICStyleData/logos/logo_HTWG.png}
+        };
+        \node[anchor=north west, outer xsep=266pt, outer ysep=15pt] at (current page.north west){
+            \includegraphics[width=6.5em]{AICStyleData/logos/LIS-logo.png}
+        };
+        \node[anchor=north west, outer xsep=346pt, outer ysep=20pt] at (current page.north west){
+        	\includegraphics[width=3em]{AICStyleData/logos/ISD_logo.jpg}
+        };
+    \end{tikzpicture}
+    	\vskip -15em\par
+    	\begin{beamercolorbox}[sep=8pt,left]{title}
+    		\usebeamerfont{title}\inserttitle\par%
+    		\ifx\insertsubtitle\@empty%
+    		\else%
+    		\vskip0.25em%
+    		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    		\fi%     
+    	\end{beamercolorbox}%
+    	
+        } 
+       {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \endgroup
+    \vfill
+}
+
+% Section divider
+\setbeamertemplate{section divider}{
+\logo { 
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[left=0.3cm] at (current page.24){
+        \includegraphics[width=1.75cm]{AICStyleData/logos/LIS-logo.png}
+    };
+	\node[left=2.2cm] at (current page.24){
+		\includegraphics[width=1cm]{AICStyleData/logos/ISD_logo.jpg}
+	};
+    \end{tikzpicture}
+    }
+    \vspace{14em}
+     \begin{beamercolorbox}[sep=0pt,left]{frametitle}
+        \usebeamerfont{frametitle}
+        \insertsectionhead\par%
+        \end{beamercolorbox}%
+    \gradientline\par
+    \vspace{6em}
+    \begin{beamercolorbox}[ht=1em,sep=8pt,wd=\paperwidth,leftskip=0.5cm,rightskip=0.5cm]{footlinecolor}
+    \scriptsize{\insertshortinstitute}
+    \hspace{1cm}
+    \hfill
+  \end{beamercolorbox}%
+    %-------------------------
+    {\usebeamercolor[fg]{titlegraphic}\insertlogo\par}
+    
+}
+
+
+%Select the Ubuntu and Raleway font (requires luaLatex or XeLaTex compilers)
+\setsansfont{Ubuntu}[
+    Path=$HOME/texmf/fonts/tfm/Ubuntu/,
+    Scale=0.9,
+    Extension = .ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+    ]
+
+
+%----------------------------------------------------------------------------------------
+%	Custom commands
+%----------------------------------------------------------------------------------------
+% Section divider
+% gradient color line for the section separation
+\newcommand{\gradientline}{\noindent%
+    \begin{tikzpicture}
+     \node [rectangle, left color=customgraylight, right color=customgray, anchor=north, minimum width=\linewidth, inner sep=0pt, minimum height=1.5pt] (box) at (current page.north){};
+    \end{tikzpicture}
+}
+
+\newcommand \makesection[1]{
+{
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth]{AICStyleData/logos/formule-maths-colors75.png}}
+}
+\begin{frame}[plain, noframenumbering]
+    \section{#1}
+    \usebeamertemplate{section divider}
+\end{frame}
+}
+
+% ----------------------------------------------------------
+
+% command for building the last slide of the presentation
+\newcommand\finalpage{}  % Empty by default.
+\newcommand\finalpagetext[1]{\renewcommand\finalpage{#1}}
+
+\newcommand \makefinalpage{
+   {
+    \usebackgroundtemplate{
+    \includegraphics[width=\paperwidth]{AICStyleData/logos/formule-maths-colors75.png}
+    }
+    \begin{frame}[plain]
+    \usebeamertemplate{endpage}
+    \end{frame}
+}
+}
+% ----------------------------------------------------------
+
+% command for building the first slide of the presentation
+
+\newcommand \maketitlepage{
+    {
+    \usebackgroundtemplate{
+    \vbox to \paperheight{\vfil\vfil\vfil\hbox to \paperwidth{\hfil\includegraphics[width=.9\paperwidth,height=.75\textheight]{AICStyleData/logos/formule-maths-colors75.png}\hfil}\vfil}
+    }
+\begin{frame}[plain]
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+}
+}
+
+% ----------------------------------------------------------
+
+% Formatting for header columns in multi-column page
+\newcommand\colheader[1]{\textcolor{customgraylight}{\textbf{#1}}\par}
+% ----------------------------------------------------------
